@@ -1,14 +1,11 @@
-name: Super-linter
-on: push
+name: CI
+on: 
+  push:
+    branches: [ main ]
 jobs:
-  Super-lint:
-    name: Lint Code Base
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Run Super-linter
-        uses: github/super-linter@v3
-        env:
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v2
+      - name: Run a oneline script
+        run: echo hello, world!!
